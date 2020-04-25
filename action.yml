@@ -1,0 +1,48 @@
+name: "Crawl Tailwind UI"
+author: "Greg Brimble"
+description: "Automate the crawling and cataloging of the Tailwind UI components"
+inputs:
+  email:
+    description: "Your tailwindui.com account email address"
+    required: true
+  password:
+    description: "Your tailwindui.com account password"
+    required: true
+  token:
+    description: "GitHub Token"
+    required: false
+    default: ${{ github.token }}
+  output:
+    description: "The repository to push the crawler output to (defaults to the current repository)"
+    required: false
+    default: ${{ github.repository }}
+  commitmessage:
+    description: "The commit message to use when updating the output repository"
+    required: false
+    default: "Update tailwindui.com"
+  branch:
+    description: "The branch to commit to when updating the output repository"
+    required: false
+    default: "master"
+  force:
+    description: "Whether or not to force push when updating the output repository"
+    required: false
+    default: "false"
+  actor:
+    description: "The git actor (defaults to the current user)"
+    required: false
+    default: ${{ github.actor }}
+  repository:
+    description: "The workspace repository (repository with .env) (defaults to the current repository)"
+    required: false
+    default: ${{ github.repository }}
+  crawler:
+    description: "The repository of the crawler (defaults to 'kiliman/tailwindui-crawler')"
+    required: false
+    default: "kiliman/tailwindui-crawler"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "refresh-cw"
+  color: "blue"
