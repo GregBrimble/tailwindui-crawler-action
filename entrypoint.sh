@@ -3,13 +3,13 @@
 export WORKSPACE_REPOSITORY="$INPUT_REPOSITORY"
 export CRAWLER_REPOSITORY="$INPUT_CRAWLER"
 export OUTPUT_REPOSITORY="$INPUT_OUTPUT"
-export INPUT_REF="master"
 unset INPUT_REPOSITORY
 
 # Clone crawler
 echo "Cloning crawler..."
 mkdir /crawler
 
+export INPUT_REF="$INPUT_CRAWLERREF"
 export GITHUB_WORKSPACE="/crawler"
 export GITHUB_REPOSITORY="$CRAWLER_REPOSITORY"
 
@@ -24,6 +24,7 @@ npm install
 echo "Cloning workspace..."
 mkdir /workspace
 
+export INPUT_REF="master"
 export GITHUB_WORKSPACE="/workspace"
 export GITHUB_REPOSITORY="$WORKSPACE_REPOSITORY"
 
