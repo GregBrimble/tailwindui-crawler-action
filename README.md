@@ -6,33 +6,34 @@
 
 ## Usage
 
-As a part of your [GitHub Actions](https://github.com/features/actions) workflow, add a new step as follows:
+1. [Create a **private** GitHub repository](https://github.com/new/).
+1. [Add `TAILWINDUI_EMAIL` and `TAILWINDUI_PASSWORD` secrets to the GitHub repository](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets).
+1. [Optionally create a `.env` file with additional settings for the crawler](https://github.com/kiliman/tailwindui-crawler#%EF%B8%8F-example-env-file).
+1. Create a new file `.github/workflows/default.yml`:
 
-```yml
-name: Update
-on:
-  push:
-  schedule:
-    - cron: "0 0 * * *" # Every day at midnight
-jobs:
-  deploy:
-    name: Update
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run crawler
-        uses: gregbrimble/tailwindui-crawler-action@v1.0.0
-        with:
-          email: ${{ secrets.TAILWINDUI_EMAIL }}
-          password: ${{ secrets.TAILWINDUI_PASSWORD }}
-```
+   ```yml
+   name: Update
+   on:
+   push:
+   schedule:
+     - cron: "0 0 * * *" # Every day at midnight
+   jobs:
+   deploy:
+     name: Update
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v2
+       - name: Run crawler
+         uses: gregbrimble/tailwindui-crawler-action@v1.0.0
+         with:
+           email: ${{ secrets.TAILWINDUI_EMAIL }}
+           password: ${{ secrets.TAILWINDUI_PASSWORD }}
+   ```
 
-Read more about the schedule cron syntax in [the official GitHub Actions documentation](https://help.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events-schedule).
+   Read more about the schedule cron syntax in [the official GitHub Actions documentation](https://help.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events-schedule).
 
-We strongly advise utilizing [GitHub Actions secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets) to securely store your TailwindUI email and password.
-
-A full example can be found in [`.github/workflows/default.yml`](https://github.com/GregBrimble/tailwindui-crawler-action/blob/master/.github/workflows/default.yml).
+A live example can be found in [`.github/workflows/default.yml`](https://github.com/GregBrimble/tailwindui-crawler-action/blob/master/.github/workflows/default.yml).
 
 ## Advanced
 
