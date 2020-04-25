@@ -3,6 +3,7 @@
 export WORKSPACE_REPOSITORY="$INPUT_REPOSITORY"
 export CRAWLER_REPOSITORY="$INPUT_CRAWLER"
 export OUTPUT_REPOSITORY="$INPUT_OUTPUT"
+export INPUT_REF="master"
 unset INPUT_REPOSITORY
 
 # Clone crawler
@@ -49,7 +50,6 @@ export OUTPUT="/output"
 export EMAIL="$INPUT_EMAIL"
 export PASSWORD="$INPUT_PASSWORD"
 
-ls /crawler
 node /crawler/index.js
 
 # Commit changes

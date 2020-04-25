@@ -1,0 +1,23 @@
+name: Example/Test
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * *" # Every day at midnight
+
+jobs:
+  test:
+    name: Example/Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run crawler
+        uses: gregbrimble/tailwindui-crawler-action@master
+        with:
+          email: ${{ secrets.TAILWINDUI_EMAIL}}
+          password: ${{ secrets.TAILWINDUI_PASSWORD }}
+
+          # The following are optional (see the README.md for more info)
+          token: ${{ secrets.TOKEN }}
+          output: gregbrimble/tailwindui
+          repository: gregbrimble/tailwindui
