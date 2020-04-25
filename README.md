@@ -50,10 +50,10 @@ The following input options are available:
 | `actor`         | The GitHub user to commit changes with <br />e.g. `gregbrimble`                                                                                                          | No        | Defaults to the current user (`{{ github.actor }}`)                                                                                                                       |
 | `repository`    | The workspace repository <br />e.g. `gregbrimble/tailwindui`                                                                                                             | No        | Defaults to the current repository (`{{ github.repository }}`). Should contain a `.env` file in the root.                                                                 |
 | `crawler`       | The repository of the crawler to use                                                                                                                                     | No        | Defaults to `kiliman/tailwindui-crawler`                                                                                                                                  |
+| `crawlerref`    | The ref (branch, tag or SHA) to checkout of the crawler repository                                                                                                       | No        | Defaults to `master`                                                                                                                                                      |
 
 Note: If using a separate private repository for the output, you must include a Personal Access Token in the `token` input, as the `{{ github.token }}` tokens are scoped to only the current repository.
 
 ## Roadmap
 
-- [] Specify crawler version
-- [] Create a PR against the output repository
+- [ ] Create a PR against the output repository
