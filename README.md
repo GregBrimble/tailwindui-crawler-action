@@ -27,7 +27,7 @@
          - name: Run crawler
            uses: gregbrimble/tailwindui-crawler-action@v1.0.0
            with:
-             email: ${{ secrets.TAILWINDUI_EMAIL}}
+             email: ${{ secrets.TAILWINDUI_EMAIL }}
              password: ${{ secrets.TAILWINDUI_PASSWORD }}
    ```
 
