@@ -53,7 +53,3 @@ The following input options are available:
 | `crawlerref`    | The ref (branch, tag or SHA) to checkout of the crawler repository                                                                                                       | No        | Defaults to `master`                                                                                                                                                      |
 
 Note: If using a separate private repository for the output, you must include a Personal Access Token in the `token` input, as the `{{ github.token }}` tokens are scoped to only the current repository.
-
-## Roadmap
-
-- [ ] Create a PR against the output repository
