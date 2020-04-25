@@ -35,6 +35,10 @@
 
 A live example can be found in [`.github/workflows/default.yml`](https://github.com/GregBrimble/tailwindui-crawler-action/blob/master/.github/workflows/default.yml).
 
+### Email Notifications
+
+To be emailed whenever there is a change to a component, simply setup [GitHub Notifications](https://help.github.com/en/github/administering-a-repository/about-email-notifications-for-pushes-to-your-repository#enabling-email-notifications-for-pushes-to-your-repository) on your repository.
+
 ## Advanced
 
 The following input options are available:
