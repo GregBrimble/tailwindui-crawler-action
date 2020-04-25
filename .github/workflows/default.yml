@@ -19,5 +19,5 @@ jobs:
 
           # The following are optional (see the README.md for more info)
           token: ${{ secrets.TOKEN }}
-          output: gregbrimble/tailwindui
-          repository: gregbrimble/tailwindui
+          output: GregBrimble/tailwindui
+          repository: GregBrimble/tailwindui

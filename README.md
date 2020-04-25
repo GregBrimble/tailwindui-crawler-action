@@ -38,14 +38,22 @@ A full example can be found in [`.github/workflows/default.yml`](https://github.
 
 The following input options are available:
 
-| Name       | Value                                     |
-| ---------- | ----------------------------------------- |
-| `email`    | Your tailwindui.com account email address |
-| `password` | Your tailwindui.com account password      |
+| Name            | Value                                                                                                                                                                    | Required? | Notes                                                                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `email`         | Your tailwindui.com account email address                                                                                                                                | Yes       |                                                                                                                                                                           |
+| `password`      | Your tailwindui.com account password                                                                                                                                     | Yes       |                                                                                                                                                                           |
+| `token`         | [A GitHub Personal Access Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) with the `repo` scope | No        | Defaults to the automatically provided [`{{ github.token }}`](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token) |
+| `output`        | The repository to output to <br /> e.g. `gregbrimble/tailwindui`                                                                                                         | No        | Defaults to the current repository (`{{ github.repository }}`)                                                                                                            |
+| `commitmessage` | The message to commit with in the output repository                                                                                                                      | No        | Defaults to `Update tailwindui.com`                                                                                                                                       |
+| `branch`        | The branch to commit changes to                                                                                                                                          | No        | Defaults to `master`                                                                                                                                                      |
+| `force`         | `true` \| `false`                                                                                                                                                        | No        | Defaults to `false`                                                                                                                                                       |
+| `actor`         | The GitHub user to commit changes with <br />e.g. `gregbrimble`                                                                                                          | No        | Defaults to the current user (`{{ github.actor }}`)                                                                                                                       |
+| `repository`    | The workspace repository <br />e.g. `gregbrimble/tailwindui`                                                                                                             | No        | Defaults to the current repository (`{{ github.repository }}`). Should contain a `.env` file in the root.                                                                 |
+| `crawler`       | The repository of the crawler to use                                                                                                                                     | No        | Defaults to `kiliman/tailwindui-crawler`                                                                                                                                  |
 
 Note: If using a separate private repository for the output, you must include a Personal Access Token in the `token` input, as the `{{ github.token }}` tokens are scoped to only the current repository.
 
 ## Roadmap
 
-[] Specify crawler version
-[] Create a PR against the output repository
+- [] Specify crawler version
+- [] Create a PR against the output repository

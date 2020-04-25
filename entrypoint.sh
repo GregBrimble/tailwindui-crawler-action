@@ -69,4 +69,4 @@ fi
 
 remote="https://$INPUT_ACTOR:$INPUT_TOKEN@github.com/$OUTPUT_REPOSITORY.git"
 
-git push $remote "HEAD:$INPUT_BRANCH" $force_option
+git push $remote "HEAD:$INPUT_BRANCH" $force_option && exit 0
