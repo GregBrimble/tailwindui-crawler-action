@@ -20,6 +20,10 @@ inputs:
     description: "The commit message to use when updating the output repository"
     required: false
     default: "Update tailwindui.com"
+  current_branch:
+    description: "The branch in the current repository where .env can be found"
+    required: false
+    default: "master"
   branch:
     description: "The branch to commit to when updating the output repository"
     required: false
