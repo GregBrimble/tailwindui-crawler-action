@@ -24,7 +24,7 @@ npm install
 echo "Cloning workspace..."
 mkdir /workspace
 
-export INPUT_REF="master"
+export INPUT_REF="$INPUT_CURRENT_BRANCH"
 export GITHUB_WORKSPACE="/workspace"
 export GITHUB_REPOSITORY="$WORKSPACE_REPOSITORY"
 
@@ -39,6 +39,7 @@ cp /workspace/.env /crawler/.env
 echo "Cloning output..."
 mkdir /output
 
+export INPUT_REF="$INPUT_BRANCH"
 export GITHUB_WORKSPACE="/output"
 export GITHUB_REPOSITORY="$OUTPUT_REPOSITORY"
 
