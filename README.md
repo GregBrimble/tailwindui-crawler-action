@@ -26,7 +26,7 @@
          - name: Checkout
            uses: actions/checkout@v2
          - name: Run crawler
-           uses: gregbrimble/tailwindui-crawler-action@v1.1.0
+           uses: gregbrimble/tailwindui-crawler-action@v1.2.0
            with:
              email: ${{ secrets.TAILWINDUI_EMAIL }}
              password: ${{ secrets.TAILWINDUI_PASSWORD }}
