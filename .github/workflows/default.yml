@@ -19,7 +19,6 @@ jobs:
           password: ${{ secrets.TAILWINDUI_PASSWORD }}
 
           # The following are optional (see the README.md for more info)
-          outputfolder: ./customoutput
           token: ${{ secrets.TOKEN }}
           output: GregBrimble/tailwindui
           repository: GregBrimble/tailwindui
