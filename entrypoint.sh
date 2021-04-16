@@ -48,7 +48,7 @@ node /checkout.js
 # Run crawler
 echo "Running crawler..."
 
-export OUTPUT="/output"
+export OUTPUT="/output/$INPUT_OUTPUTFOLDER"
 export EMAIL="$INPUT_EMAIL"
 export PASSWORD="$INPUT_PASSWORD"
 

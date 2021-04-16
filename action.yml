@@ -16,6 +16,10 @@ inputs:
     description: "The repository to push the crawler output to (defaults to the current repository)"
     required: false
     default: ${{ github.repository }}
+  outputfolder:
+    description: "The folder to output the crawled components in the output repository"
+    required: false
+    default: "./"
   commitmessage:
     description: "The commit message to use when updating the output repository"
     required: false
